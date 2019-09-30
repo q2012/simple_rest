@@ -7,9 +7,9 @@ stages:
 
 build:
     stage: build
-    image: docker:17
+    image: docker:latest
     services:
       - docker:dind
     script:
         - export DOCKER_HOST="tcp://localhost:2375"
-        - docker build -t simple-rest .
+        - docker build -f Dockerfile -t simple-rest .
