@@ -11,4 +11,5 @@ build:
     services:
       - docker:dind
     script:
+        - export DOCKER_HOST="tcp://localhost:2375"
         - docker build -t simple-rest .
