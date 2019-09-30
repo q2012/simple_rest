@@ -1,0 +1,17 @@
+variables:
+    PACKAGE_PATH: /go/src/app
+
+stages:
+    - build
+    - deploy
+
+build:
+    stage: build
+    image: docker:latest
+    tags: [dockerexec]
+    script:
+        - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+        - docker pull $CI_REGISTRY_IMAGE/simple-rest:latest || true
+        - docker build -f Dockerfile --cache-from $CI_REGISTRY_IMAGE/simple-rest:latest -t $CI_REGISTRY_IMAGE/simple-rest:latest -t $CI_REGISTRY_IMAGE/simple-rest:build_$CI_COMMIT_SHORT_SHA .
+        - docker push $CI_REGISTRY_IMAGE/backend:latest
+        - docker push $CI_REGISTRY_IMAGE/backend:build_$CI_COMMIT_SHORT_SHA

@@ -1,0 +1,79 @@
+[submodule "scs"]
+	path = src/github.com/alexedwards/scs
+	url = https://github.com/alexedwards/scs
+
+[submodule "mux"]
+	path = src/github.com/gorilla/mux
+	url = https://github.com/gorilla/mux
+
+[submodule "securecookie"]
+	path = src/github.com/gorilla/securecookie
+	url = https://github.com/gorilla/securecookie
+
+[submodule "sessions"]
+	path = src/github.com/gorilla/sessions
+	url = https://github.com/gorilla/sessions
+
+[submodule "chunkreader"]
+	path = src/github.com/jackc/chunkreader
+	url = https://github.com/jackc/chunkreader
+
+[submodule "pgconn"]
+	path = src/github.com/jackc/pgconn
+	url = https://github.com/jackc/pgconn
+
+[submodule "pgio"]
+	path = src/github.com/jackc/pgio
+	url = https://github.com/jackc/pgio
+
+[submodule "pgmock"]
+	path = src/github.com/jackc/pgmock
+	url = https://github.com/jackc/pgmock
+
+[submodule "pgpassfile"]
+	path = src/github.com/jackc/pgpassfile
+	url = https://github.com/jackc/pgpassfile
+
+[submodule "pgproto3"]
+	path = src/github.com/jackc/pgproto3
+	url = https://github.com/jackc/pgproto3
+
+[submodule "pgtype"]
+	path = src/github.com/jackc/pgtype
+	url = https://github.com/jackc/pgtype
+
+[submodule "pgx"]
+	path = src/github.com/jackc/pgx
+	url = https://github.com/jackc/pgx
+
+[submodule "puddle"]
+	path = src/github.com/jackc/puddle
+	url = https://github.com/jackc/puddle
+
+[submodule "godotenv"]
+	path = src/github.com/joho/godotenv
+	url = https://github.com/joho/godotenv
+
+[submodule "pq"]
+	path = src/github.com/lib/pq
+	url = https://github.com/lib/pq
+
+[submodule "testify"]
+	path = src/github.com/stretchr/testify
+	url = https://github.com/stretchr/testify
+
+[submodule "crypto"]
+	path = src/golang.org/x/crypto
+	url = https://github.com/golang/crypto
+
+[submodule "text"]
+	path = src/golang.org/x/text
+	url = https://github.com/golang/text
+
+[submodule "xerrors"]
+	path = src/golang.org/x/xerrors
+	url = https://github.com/golang/xerrors
+
+[submodule "yaml.v2"]
+	path = src/gopkg.in/yaml.v2
+	url = https://github.com/go-yaml/yaml/
