@@ -8,7 +8,6 @@ stages:
 build:
     stage: build
     image: docker:latest
-    services:
-      - docker:dind
+    tags: [dockerexec]
     script:
         - docker build -f Dockerfile -t simple-rest .
