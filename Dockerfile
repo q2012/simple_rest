@@ -1,14 +1,12 @@
 
-FROM golang:1.12.0-alpine3.9
+FROM golang:1.13.0
 
-RUN mkdir /app
+WORKDIR /go/src/app
 
-ADD . /app
+ADD . .
 
-WORKDIR /app
-
-ENV GOPATH=/app
+ENV GOPATH=/go/src/app
 
 RUN go build -o main .
 
-CMD ["/app/main"]
+CMD ["/go/src/app/main"]

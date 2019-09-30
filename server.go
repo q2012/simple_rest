@@ -1,13 +1,13 @@
 package main
 
 import (
-	"./api"
-	"./globals"
-	"./models"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 	"log"
 	"net/http"
+	"simple_rest/api"
+	"simple_rest/globals"
+	"simple_rest/models"
 )
 
 

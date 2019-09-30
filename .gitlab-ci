@@ -1,0 +1,18 @@
+variables:
+    PACKAGE_PATH: /go/src/app
+
+stages:
+    - build
+    - deploy
+
+.anchors:
+  - &inject-gopath
+      mkdir -p $(dirname ${PACKAGE_PATH})
+      && ln -s ${CI_PROJECT_DIR} ${PACKAGE_PATH}
+      && cd ${PACKAGE_PATH}
+
+build:
+    stage: build
+    image: docker:17
+    script:
+        - docker build -t simple-rest .
