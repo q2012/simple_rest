@@ -1,16 +1,23 @@
 package globals
 
 import (
+	"context"
+	"fmt"
 	"github.com/gorilla/sessions"
 	"github.com/jackc/pgx/pgxpool"
+	"os"
 	"simple_rest/models"
 )
 
-
+var postgresConnString string
 var store *sessions.CookieStore
 var all[] *models.Main
 var db *pgxpool.Pool
 
+
+func SetPostgresConnString(l string) {
+	postgresConnString = l
+}
 
 func Pool() *pgxpool.Pool {
 	return db
@@ -38,20 +45,18 @@ func AppendToAll(one *models.Main, toAdd ...*models.Main) []*models.Main {
 }
 
 func initDatabaseConnection() error {
-	//poolConfig, err := pgxpool.ParseConfig(os.Getenv("DATABASE_URL"))
-	//if err != nil {
-	//	fmt.Println("Unable to parse DATABASE_URL", "error", err)
-	//	os.Exit(1)
-	//}
-	//
-	//db, err = pgxpool.ConnectConfig(context.Background(), poolConfig)
-	//if err != nil {
-	//	fmt.Println("Unable to create connection pool", "error", err)
-	//	os.Exit(1)
-	//}
-	//defer connection.Close(context.Background())
-	//return err
-	return nil
+	poolConfig, err := pgxpool.ParseConfig(postgresConnString)
+	if err != nil {
+		fmt.Println("Unable to parse DATABASE_URL", "error", err)
+		os.Exit(1)
+	}
+
+	db, err = pgxpool.ConnectConfig(context.Background(), poolConfig)
+	if err != nil {
+		fmt.Println("Unable to create connection pool", "error", err)
+		os.Exit(1)
+	}
+	return err
 }
 
 func initSession() {

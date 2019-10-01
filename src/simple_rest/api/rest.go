@@ -10,8 +10,7 @@ import (
 )
 
 
-
-func GetAll(w http.ResponseWriter, r *http.Request) error{
+func GetAll(w http.ResponseWriter, r *http.Request) error {
 	var rows, err = globals.Pool().Query(context.Background(), "select main.id, inne.id from main inner join inne on main.inne_id = inne.id")
 	if err != nil {
 		return err

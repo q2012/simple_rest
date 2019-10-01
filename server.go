@@ -5,6 +5,7 @@ import (
 	"github.com/joho/godotenv"
 	"log"
 	"net/http"
+	"os"
 	"simple_rest/api"
 	"simple_rest/globals"
 	"simple_rest/models"
@@ -18,6 +19,13 @@ func init() {
 	if err := godotenv.Load(); err != nil {
 		log.Print("No .env file found")
 	}
+	//"postgres://test:test@pg-docker:5432/test_service_db"
+	globals.SetPostgresConnString("postgres://" +
+		os.Getenv("POSTGRES_USER") + ":" +
+		os.Getenv("POSTGRES_PASSWORD") + "@" +
+		os.Getenv("POSTGRES_SIMPLE_REST_SERVICE_HOST") + ":" +
+		os.Getenv("POSTGRES_SIMPLE_REST_SERVICE_PORT") + "/" +
+		os.Getenv("POSTGRES_DB"))
 }
 
 func initApi() *mux.Router{
