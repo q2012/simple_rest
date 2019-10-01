@@ -1,6 +1,7 @@
 variables:
     PACKAGE_PATH: /go/src/app
     GIT_SUBMODULE_STRATEGY: recursive
+    GOPROXY: direct
 stages:
     - build
     - deploy

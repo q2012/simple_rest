@@ -3,13 +3,13 @@ package main
 import (
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
+	"gitlab.uaprom/containers/logevo-go"
 	"log"
 	"net/http"
 	"os"
 	"simple_rest/api"
 	"simple_rest/globals"
 	"simple_rest/models"
-	logevo "gitlab.uaprom/containers/logevo-go"
 )
 
 
