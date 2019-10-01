@@ -77,3 +77,7 @@
 [submodule "yaml.v2"]
 	path = src/gopkg.in/yaml.v2
 	url = https://github.com/go-yaml/yaml/
+
+[submodule "logevo-go"]
+	path = src/gitlab.uaprom/containers/logevo-go
+	url = gitlab.uaprom/containers/logevo-go

@@ -9,6 +9,7 @@ import (
 	"simple_rest/api"
 	"simple_rest/globals"
 	"simple_rest/models"
+	logevo "gitlab.uaprom/containers/logevo-go"
 )
 
 
@@ -39,9 +40,8 @@ func initApi() *mux.Router{
 }
 
 func main() {
-
+	logevo.ConfigureLogging()
 	globals.InitGlobals()
-
 	r := initApi()
 	log.Fatal(http.ListenAndServe(":8000", r))
 }
