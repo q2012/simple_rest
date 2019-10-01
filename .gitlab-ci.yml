@@ -1,6 +1,6 @@
 variables:
     PACKAGE_PATH: /go/src/app
-
+    GIT_SUBMODULE_STRATEGY: recursive
 stages:
     - build
     - deploy
