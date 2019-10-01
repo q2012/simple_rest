@@ -42,19 +42,20 @@ func AppendToAll(one *models.Main, toAdd ...*models.Main) []*models.Main {
 }
 
 func initDatabaseConnection() error {
-	poolConfig, err := pgxpool.ParseConfig(os.Getenv("DATABASE_URL"))
-	if err != nil {
-		fmt.Println("Unable to parse DATABASE_URL", "error", err)
-		os.Exit(1)
-	}
-
-	db, err = pgxpool.ConnectConfig(context.Background(), poolConfig)
-	if err != nil {
-		fmt.Println("Unable to create connection pool", "error", err)
-		os.Exit(1)
-	}
+	//poolConfig, err := pgxpool.ParseConfig(os.Getenv("DATABASE_URL"))
+	//if err != nil {
+	//	fmt.Println("Unable to parse DATABASE_URL", "error", err)
+	//	os.Exit(1)
+	//}
+	//
+	//db, err = pgxpool.ConnectConfig(context.Background(), poolConfig)
+	//if err != nil {
+	//	fmt.Println("Unable to create connection pool", "error", err)
+	//	os.Exit(1)
+	//}
 	//defer connection.Close(context.Background())
-	return err
+	//return err
+	return nil
 }
 
 func initSession() {
@@ -64,5 +65,5 @@ func initSession() {
 	//}
 	//defer store.Close()
 
-	store = sessions.NewCookieStore([]byte(os.Getenv("SESSION_KEY")))
+	//store = sessions.NewCookieStore([]byte(os.Getenv("SESSION_KEY")))
 }
