@@ -1,13 +1,9 @@
 package globals
 
 import (
-	"context"
-	"fmt"
 	"github.com/gorilla/sessions"
 	"github.com/jackc/pgx/pgxpool"
 	"simple_rest/models"
-
-	"os"
 )
 
 
