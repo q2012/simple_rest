@@ -6,6 +6,7 @@ WORKDIR /go/src/app
 ADD . .
 
 ENV GOPATH=/go/src/app
+ENV GOPROXY=direct
 
 RUN go build -o main .
 
