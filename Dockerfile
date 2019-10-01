@@ -9,4 +9,4 @@ ENV GOPATH=/go/src/app
 
 RUN go build -o main .
 
-CMD ["/go/src/app/main"]
+# CMD ["/go/src/app/main"]
